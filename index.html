@@ -19,10 +19,12 @@
     border: 2px solid magenta;
     height: 800px;
   }
+  
     </style>
 </head>
 <body class="poppins-font">
-<header>
+  <!--part one-->
+<section id="one">
     <!--nav part-->
     <nav class="container mx-auto lg:px-24 py-8">
         <div class="navbar bg-base-100">
@@ -35,7 +37,7 @@
                   <div class="indicator">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                     <!--cart-->
-                    <span class="badge badge-sm indicator-item">0</span>
+                    <span id="cart-count" class="badge badge-sm indicator-item">0</span>
                   </div>
                 </div>
               </div>
@@ -72,8 +74,8 @@
         </div>
 
     </section>
-</header>
-<main>
+
+
     <!--card part-->
     <section class="container mx-auto lg:px-24 py-8" >
         <div class="flex lg:flex-row flex-col justify-center items-center gap-5 ">
@@ -93,12 +95,14 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                               </div>
                               <!---->
-                          <p>Fancy Bag</p>
-                          <p>100$</p>
-                          <div class="card-actions">
-                            <!--button 1-->
-                            <button class="btn btn-active">Buy Now</button>
+                          <div id="cart-1">
+                            <p >Fancy Bag</p>
+                          <p><span id="price-1">100</span>$</p>
                           </div>
+                          <!-- <div class="card-actions"> -->
+                            <!--button 1-->
+                            <button id="btn-1" class="btn buy btn-active">Buy Now</button>
+                          <!-- </div> -->
                         </div>
                       </div>
                 </div>
@@ -116,12 +120,14 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                               </div>
                               <!---->
-                          <p>Pouch Bag</p>
-                          <p>100$</p>
-                          <div class="card-actions">
-                            <!--button 2-->
-                            <button class="btn btn-active">Buy Now</button>
+                          <div id="cart-2">
+                            <p >Pouch Bag</p>
+                          <p ><span class="price">200</span>$</p>
                           </div>
+                          <!-- <div class="card-actions"> -->
+                            <!--button 2-->
+                            <button  id="btn-2" class="btn buy btn-active">Buy Now</button>
+                          <!-- </div> -->
                         </div>
                       </div>
                 </div>
@@ -139,12 +145,14 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                               </div>
                               <!---->
-                          <p>School Bag</p>
-                          <p>100$</p>
-                          <div class="card-actions">
-                            <!--button 3-->
-                            <button class="btn btn-active">Buy Now</button>
+                          <div id="cart-3">
+                            <p >School Bag</p>
+                          <p ><span class="price">100</span>$</p>
                           </div>
+                          <!-- <div class="card-actions"> -->
+                            <!--button 3-->
+                            <button  id="btn-3" class="btn buy btn-active">Buy Now</button>
+                          <!-- </div> -->
                         </div>
                       </div>
                 </div>
@@ -162,12 +170,14 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                               </div>
                               <!---->
-                          <p>Office Bag</p>
-                          <p>100$</p>
-                          <div class="card-actions">
-                            <!--button 4-->
-                            <button class="btn btn-active">Buy Now</button>
+                          <div id="cart-4">
+                            <p  >Office Bag</p>
+                          <p ><span class="price">300</span>$</p>
                           </div>
+                          <!-- <div class="card-actions"> -->
+                            <!--button 4-->
+                            <button  id="btn-4" class="btn buy btn-active">Buy Now</button>
+                          <!-- </div> -->
                         </div>
                       </div>
                 </div>
@@ -175,41 +185,68 @@
             <div class="vl hidden lg:block"></div>
             <!--count part-->
             <div class="flex-1">
-                <div class="border-solid border-pink-500 border-2">
+                <div  class="border-solid border-pink-500 border-2">
                     <h1 class="text-center">Cart</h1>
                     <hr>
+                    <div class="flex flex-row gap-4 justify-center items-center ">
+                      <div id="cart-text-one"  class="">
+                      </div>
+                      <div id="cart-text-two"  class="">
+                      </div>
+                    </div>
+                   
                     <!---->
                 </div>
                 <div class="border-solid border-pink-500 border-2 p-7  ">
                     <h1 class="text-center">Have a coupon?</h1>
                     <div class="flex flex-row justify-center items-center">
                         <label class="input input-bordered ">
-                            <input type="text" class="" placeholder="Type here" />
+                            <input id="input-field" type="text" class="" placeholder="Type here" />
                           </label>
                           <!--button 5-->
-                          <button  class="btn btn-active ">Apply</button>
+                          <button  id="discount-btn" class="btn bg-pink-500 " disabled>Apply</button>
                     </div>
 
                 </div>
                 <div class="border-solid border-pink-500 border-2 text-center">
                     <!---->
-                    <p>Discount: $</p>
-                    <p>Sub-Total: $</p>
+                    <p >Sub-Total: <span id="sub-total">0</span> $</p>
+                    <p>Discount: <span id="discount-total">0</span> $</p>
                     <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
                         <!--button 6 7-->
-                        <button class="btn btn-active" >Inside New York : 10$</button>
-                        <button class="btn btn-active">Outside New York: 50$</button>
+                        <button onclick="finalTotal('inside')" class="btn btn-active" >Inside New York : 10$</button>
+                        <button onclick="finalTotal('outside')" class="btn btn-active">Outside New York: 50$</button>
                     </div>
                     <!---->
-                    <p>Total: $</p>
+                    <p>Total: <span id="total">0</span> $</p>
                     <!--button 8-->
-                    <button class="btn btn-active">Order Now</button>
+                    <button  id="order" class="btn bg-pink-500" disabled onclick="hiddenSection()">Order Now</button>
                 </div>
 
             </div>
         </div>
     </section>
-</main>
+  </section>
+
+  <!--part two-->
+  <section  id="two" class="hidden">
+    <div >
+
+      <div class="hero min-h-screen bg-white">
+        <div class="hero-content text-center">
+          <div class="max-w-md bg-pink-200  p-16 rounded-2xl">
+            <h1 class="text-5xl font-bold text-pink-600">Confirm</h1>
+            <p class="py-6 text-pink-600">We have confirmed your order</p>
+            <button class="btn bg-gray-300 text-pink-600">Close</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script src="./scripts/calc.js"></script>
+<script src="./scripts/other.js"></script>
 
 
     
