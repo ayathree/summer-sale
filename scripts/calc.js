@@ -1,5 +1,5 @@
 
-const allBtn = document.getElementsByClassName('btn buy btn-active');
+const allBtn = document.getElementsByClassName('btn buy bg-pink-500');
 
 let count=0;
 for (const btn of allBtn) {
